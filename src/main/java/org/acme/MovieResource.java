@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.List;
 
-@Path("/hello")
+@Path("/movies")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class MovieResource {
@@ -37,13 +37,13 @@ public class MovieResource {
     @GET
     @Path("/country/{country}")
     public Response getByCountry(@PathParam("country") String country) {
-        List<MoviesEntity> moviesEntities = MoviesEntity.list("SELECT m FROM Movie m WHERE m.country = ?1 ORDER BY id " +
+        List<MoviesEntity> moviesEntities = MoviesEntity.list("SELECT m FROM MoviesEntity m WHERE m.country = ?1 ORDER BY id " +
                 "DESC", country);
         return Response.ok(moviesEntities).build();
     }
 
     @GET
-    @Path("title/{title}")
+    @Path("/title/{title}")
     public Response getByTitle(@PathParam("title") String title) {
         //will find movie by specifc title
        return MoviesEntity.find("title", title)
@@ -63,9 +63,10 @@ public class MovieResource {
     }
 
     @DELETE
-    @Path("/id")
+    @Path("/{id}")
+    @Transactional
     public Response deleteById(@PathParam("id") Long id) {
-        boolean deleted= MoviesEntity.deleteById(id);
+        boolean deleted = MoviesEntity.deleteById(id);
         if (deleted) {
             return Response.noContent().build();
         }
