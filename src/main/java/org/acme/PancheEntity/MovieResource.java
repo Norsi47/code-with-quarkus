@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.PancheEntity;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
