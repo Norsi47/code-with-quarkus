@@ -33,7 +33,7 @@ public class MovieController {
     }
 
     @GET
-    @Path("/movieById{id}")
+    @Path("/movieById/{id}")
     public Response getById(@PathParam("id") Long id) {
        return movieRepository.findByIdOptional(id)
                 .map(movie -> Response.ok(movie).build())
@@ -81,3 +81,4 @@ public class MovieController {
 
 
 }
+//learn how to have response say "Movie is saved"
