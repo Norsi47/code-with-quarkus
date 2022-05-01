@@ -10,7 +10,7 @@ public class MovieRepository implements PanacheRepository<MovieServiceEntity> {
 
 
     public List<MovieServiceEntity> findByCountry(String country) {
-        return list("SELECT m FROM Movie m WHERE m.country = ?1 ORDER BY" +
+        return list("SELECT m FROM MovieServiceEntity m WHERE m.country = ?1 ORDER BY" +
                 "DESC", country);
     }
 }
