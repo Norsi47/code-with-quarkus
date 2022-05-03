@@ -1,4 +1,4 @@
-package Response;
+package put.response;
 
 import lombok.Data;
 import org.onye.model.UserAddressInfo;
@@ -10,7 +10,7 @@ import java.util.List;
 public class UserInfoResponse {
     private List<UsersNames> userNames;
 
-    private String userAge;
+    private int userAge;
 
     private List<UserAddressInfo> userAddressInfo;
 }

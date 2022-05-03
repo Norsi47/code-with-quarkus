@@ -1,11 +1,12 @@
 package service.classes;
 
-import Requests.UserInfoRequest;
-import Response.UserInfoResponse;
+
+import put.requests.UserInfoRequest;
+import put.response.UserInfoResponse;
 
 public class UserInfoService {
 
-//    UserInfoRequest userInfoRequest = new UserInfoRequest();
+
     UserInfoResponse userInfoResponse = new UserInfoResponse();
 
     public UserInfoResponse showUserInfo(UserInfoRequest userInfoRequest) {
@@ -15,4 +16,10 @@ public class UserInfoService {
         return userInfoResponse;
     }
 
+
+//    public UserInfoResponse  setUserInfoResponse() {
+//        userInfoResponse.setUserAge(45);
+//        return userInfoResponse;
+//
+//    }
 }

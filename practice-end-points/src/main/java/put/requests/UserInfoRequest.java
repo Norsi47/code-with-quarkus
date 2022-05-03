@@ -1,4 +1,4 @@
-package Requests;
+package put.requests;
 
 import lombok.Data;
 import org.onye.model.UserAddressInfo;
@@ -11,7 +11,7 @@ public class UserInfoRequest {
 
     private List <UsersNames> usersNames;
 
-    private String usersAge;
+    private int usersAge;
 
     private List <UserAddressInfo> addressInfo;
 
