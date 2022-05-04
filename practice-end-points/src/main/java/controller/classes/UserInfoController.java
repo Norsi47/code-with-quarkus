@@ -1,18 +1,14 @@
 package controller.classes;
 
 import put.requests.UserInfoRequest;
-import put.response.UserInfoResponse;
 import service.classes.UserInfoService;
 
-import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Path("/usersInfo")
@@ -21,28 +17,28 @@ import java.util.List;
 public class UserInfoController {
 
 
-//    UserInfoService userInfoService = new UserInfoService();
+    UserInfoService userInfoService = new UserInfoService();
+
+    @POST
+    @Path("/showUserInfo")
+    public Response showUserInfo(UserInfoRequest request) {
 
 
-//    @POST
-//    @Path("/showUserInfo")
-//    public Response showUserInfo(UserInfoRequest request) {
-//
-//
-//        userInfoService.showUserInfo(request);
-//        return Response.ok(userInfoService).build();
-//
-//    }
+        return Response.ok(userInfoService.showUserInfo(request)).build();
 
-    List <UserInfoResponse> userInfoResponseArrayList = new ArrayList<>();
+    }
+
 
     @POST
     @Path("/testUserInfo")
     public Response tesinResponse(UserInfoRequest request) {
-        UserInfoResponse userInfoResponse = new UserInfoResponse();
-        userInfoResponse.setUserAge(45);
-        userInfoResponseArrayList.add(userInfoResponse);
-        return Response.ok().build();
+//        UserInfoResponse userInfoResponse = new UserInfoResponse();
+//        userInfoResponse.setUserAge(request.getUsersAge());
+        //only need to put in array list if calls will be done multi times
+////        userInfoResponseArrayList.add(userInfoResponse);
+//        return Response.ok(userInfoResponseArrayList).build();
+        //another way to do it
+        return Response.ok(userInfoService.testUserInfoResponse(request)).build();
 
     }
 

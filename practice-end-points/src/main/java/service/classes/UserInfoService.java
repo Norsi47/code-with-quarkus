@@ -17,9 +17,9 @@ public class UserInfoService {
     }
 
 
-//    public UserInfoResponse  setUserInfoResponse() {
-//        userInfoResponse.setUserAge(45);
-//        return userInfoResponse;
-//
-//    }
+    public UserInfoResponse  testUserInfoResponse(UserInfoRequest userInfoRequest) {
+        userInfoResponse.setUserAge(userInfoRequest.getUsersAge());
+        return userInfoResponse;
+
+    }
 }
