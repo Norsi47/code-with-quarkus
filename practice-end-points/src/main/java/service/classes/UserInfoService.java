@@ -1,13 +1,18 @@
 package service.classes;
 
 
+import org.onye.model.UsersNames;
 import put.requests.UserInfoRequest;
 import put.response.UserInfoResponse;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserInfoService {
 
 
     UserInfoResponse userInfoResponse = new UserInfoResponse();
+    UserInfoRequest userInfoRequest = new UserInfoRequest();
 
     public UserInfoResponse showUserInfo(UserInfoRequest userInfoRequest) {
         userInfoResponse.setUserNames(userInfoRequest.getUsersNames());
@@ -22,4 +27,13 @@ public class UserInfoService {
         return userInfoResponse;
 
     }
+
+    public UserInfoResponse userInfoResponseList(int userAge) {
+
+
+        List<UserInfoResponse> userInfoResponseList = new ArrayList<>();
+        userInfoResponse.getUserAge();
+        return userInfoResponse;
+    }
+
 }
