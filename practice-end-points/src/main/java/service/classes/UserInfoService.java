@@ -31,9 +31,10 @@ public class UserInfoService {
     public UserInfoResponse userInfoResponseList(int userAge) {
 
 
-        List<UserInfoResponse> userInfoResponseList = new ArrayList<>();
-        userInfoResponse.getUserAge();
-        return userInfoResponse;
+         userInfoResponse.setUserAge(userAge);
+         return userInfoResponse;
+
+
     }
 
 }

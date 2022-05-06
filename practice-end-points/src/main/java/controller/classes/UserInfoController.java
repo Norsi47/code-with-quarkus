@@ -1,6 +1,7 @@
 package controller.classes;
 
 import put.requests.UserInfoRequest;
+import put.response.UserInfoResponse;
 import service.classes.UserInfoService;
 
 import javax.ws.rs.Consumes;
@@ -48,8 +49,12 @@ public class UserInfoController {
     @GET
     @Path("/getUserInfo/{userAge}")
     public Response saveUserInfo(@PathParam("userAge") int userAge) {
+        UserInfoResponse userInfoResponse = new UserInfoResponse();
+        UserInfoRequest userInfoRequest = new UserInfoRequest();
+        userInfoResponse.setUserAge(userAge);
+//        userInfoRequest.getUsersAge(userAge);
 
-        return Response.ok(userInfoService.userInfoResponseList(userAge)).build();
+        return Response.ok(userAge).build();
 
     }
 
