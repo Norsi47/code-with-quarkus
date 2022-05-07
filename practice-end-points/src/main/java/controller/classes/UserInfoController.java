@@ -13,6 +13,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Path("/usersInfo")
@@ -22,6 +24,11 @@ public class UserInfoController {
 
 
     UserInfoService userInfoService = new UserInfoService();
+    UserInfoRequest userInfoRequest = new UserInfoRequest();
+
+    List<UserInfoRequest> userInfoRequestList = new ArrayList<>();
+
+
 
     @POST
     @Path("/showUserInfo")
@@ -46,16 +53,22 @@ public class UserInfoController {
 
     }
 
+    List<UserInfoResponse> userInfoResponseList = new ArrayList<>();
     @GET
     @Path("/getUserInfo/{userAge}")
     public Response saveUserInfo(@PathParam("userAge") int userAge) {
-        UserInfoResponse userInfoResponse = new UserInfoResponse();
-        UserInfoRequest userInfoRequest = new UserInfoRequest();
-        userInfoResponse.setUserAge(userAge);
-//        userInfoRequest.getUsersAge(userAge);
 
-        return Response.ok(userAge).build();
 
+
+        return Response.ok(userInfoService.findByUserAge(userAge)).build();
+
+    }
+
+    @GET
+    @Path("/requestUserInfo")
+    public Response showUsersInfo() {
+//        userInfoRequestList.add(userInfoRequest);
+        return Response.ok(userInfoService.saveUserInfo()).build();
     }
 
 }
