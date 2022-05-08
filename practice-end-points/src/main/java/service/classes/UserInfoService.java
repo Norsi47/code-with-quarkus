@@ -14,13 +14,15 @@ public class UserInfoService {
     UserInfoRequest userInfoRequest = new UserInfoRequest();
 
     List<UserInfoRequest> userInfoRequestList = new ArrayList<>();
+    List<UserInfoResponse> userInfoResponseList = new ArrayList<>();
 
     public UserInfoResponse showUserInfo(UserInfoRequest userInfoRequest) {
         userInfoResponse.setUserNames(userInfoRequest.getUsersNames());
         userInfoResponse.setUserAddressInfo(userInfoRequest.getAddressInfo());
         userInfoResponse.setUserAge(userInfoRequest.getUsersAge());
-        //saves the request into the empty list
+        //saves the request into the empty array list
         userInfoRequestList.add(userInfoRequest);
+        userInfoResponseList.add(userInfoResponse);
         return userInfoResponse;
     }
 
@@ -40,9 +42,12 @@ public class UserInfoService {
     }
 
     //needs more work
-    public int findByUserAge(int userAge) {
-        userInfoRequestList.get(userAge);
-        return userAge;
+    public List<UserInfoRequest> findByUserAge(int usersAge) {
+//        userInfoResponseList.get(userAge);
+        userInfoRequest.getUsersAge();
+        userInfoRequestList.get(usersAge);
+        return userInfoRequestList;
+
 
     }
 

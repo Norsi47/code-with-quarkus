@@ -55,12 +55,12 @@ public class UserInfoController {
 
     List<UserInfoResponse> userInfoResponseList = new ArrayList<>();
     @GET
-    @Path("/getUserInfo/{userAge}")
-    public Response saveUserInfo(@PathParam("userAge") int userAge) {
+    @Path("/getUserInfo/{usersAge}")
+    public Response saveUserInfo(@PathParam("userAge") int usersAge) {
 
 
 
-        return Response.ok(userInfoService.findByUserAge(userAge)).build();
+        return Response.ok(userInfoService.findByUserAge(usersAge)).build();
 
     }
 
