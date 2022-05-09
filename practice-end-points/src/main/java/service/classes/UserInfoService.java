@@ -14,21 +14,24 @@ public class UserInfoService {
     UserInfoRequest userInfoRequest = new UserInfoRequest();
 
     List<UserInfoRequest> userInfoRequestList = new ArrayList<>();
-    List<UserInfoResponse> userInfoResponseList = new ArrayList<>();
+    List<UserInfoRequest> userInfoResponseList = new ArrayList<UserInfoRequest>();
 
     public UserInfoResponse showUserInfo(UserInfoRequest userInfoRequest) {
         userInfoResponse.setUserNames(userInfoRequest.getUsersNames());
         userInfoResponse.setUserAddressInfo(userInfoRequest.getAddressInfo());
-        userInfoResponse.setUserAge(userInfoRequest.getUsersAge());
+        userInfoResponse.setUsersAge(userInfoRequest.getUsersAge());
         //saves the request into the empty array list
         userInfoRequestList.add(userInfoRequest);
+
+        //save response in list
+//        userInfoResponseList.add(userInfoResponse);
 
         return userInfoResponse;
     }
 
 
     public UserInfoResponse  testUserInfoResponse(UserInfoRequest userInfoRequest) {
-        userInfoResponse.setUserAge(userInfoRequest.getUsersAge());
+        userInfoResponse.setUsersAge(userInfoRequest.getUsersAge());
 
         return userInfoResponse;
 
@@ -41,12 +44,23 @@ public class UserInfoService {
 
     }
 
-    //needs more work
-    public int findByUserAge(int usersAge) {
-//        userInfoResponse.setUserAge(usersAge);
-        userInfoRequest.getUsersAge();
+//    public UserInfoRequest  saveUserResponse(int usersAge) {
+////        usersAge = userInfoRequest.getUsersAge();
+//        userInfoRequest.setUsersAge(usersAge);
+//
+////        userInfoResponse.getUsersAge();
+//
+//        return userInfoRequest;
+//
+//    }
 
-        return usersAge;
+    //needs more work
+    public UserInfoRequest findByUserAge(int usersAge) {
+        UserInfoRequest userInfoResponse = userInfoRequestList.get(usersAge);
+        userInfoResponseList.add(userInfoResponse);
+        return userInfoRequest;
+
+
     }
 
 }

@@ -4,14 +4,12 @@ import put.requests.UserInfoRequest;
 import put.response.UserInfoResponse;
 import service.classes.UserInfoService;
 
-import javax.validation.constraints.Max;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
@@ -26,6 +24,7 @@ public class UserInfoController {
 
     UserInfoService userInfoService = new UserInfoService();
     UserInfoRequest userInfoRequest = new UserInfoRequest();
+    UserInfoResponse userInfoResponse = new UserInfoResponse();
 
     List<UserInfoRequest> userInfoRequestList = new ArrayList<>();
 
@@ -54,19 +53,14 @@ public class UserInfoController {
 
     }
 
-    List<UserInfoResponse> userInfoResponseList = new ArrayList<>();
+    List<UserInfoRequest> userInfoResponseList = new ArrayList<UserInfoRequest>();
     @GET
     @Path("/getUserInfo/{usersAge}")
     public Response saveUserInfo(@PathParam("usersAge") int usersAge) {
-//        UserInfoResponse userInfoResponse = new UserInfoResponse();
-////        userInfoResponse.getUserAge(usersAge);
-//        List<UserInfoRequest> userInfoResponseList = userInfoService.findByUserAge(usersAge);
-//        userInfoResponseList.add(userInfoResponse);
-//        return Response.ok(userInfoResponseList).build();
 
-
-
-        return Response.ok(userInfoService.findByUserAge(usersAge)).build();
+        UserInfoRequest userInfoRequest = userInfoRequestList.get(usersAge);
+        userInfoResponseList.add(userInfoRequest);
+        return Response.ok(userInfoResponseList).build();
 
     }
 

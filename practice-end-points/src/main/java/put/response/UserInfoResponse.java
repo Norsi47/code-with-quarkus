@@ -10,7 +10,7 @@ import java.util.List;
 public class UserInfoResponse {
     private List<UsersNames> userNames;
 
-    private int userAge;
+    private int usersAge;
 
     private List<UserAddressInfo> userAddressInfo;
 }
