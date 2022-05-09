@@ -22,7 +22,7 @@ public class UserInfoService {
         userInfoResponse.setUserAge(userInfoRequest.getUsersAge());
         //saves the request into the empty array list
         userInfoRequestList.add(userInfoRequest);
-        userInfoResponseList.add(userInfoResponse);
+
         return userInfoResponse;
     }
 
@@ -42,13 +42,11 @@ public class UserInfoService {
     }
 
     //needs more work
-    public List<UserInfoRequest> findByUserAge(int usersAge) {
-//        userInfoResponseList.get(userAge);
+    public int findByUserAge(int usersAge) {
+//        userInfoResponse.setUserAge(usersAge);
         userInfoRequest.getUsersAge();
-        userInfoRequestList.get(usersAge);
-        return userInfoRequestList;
 
-
+        return usersAge;
     }
 
 }

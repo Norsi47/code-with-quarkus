@@ -4,6 +4,7 @@ import put.requests.UserInfoRequest;
 import put.response.UserInfoResponse;
 import service.classes.UserInfoService;
 
+import javax.validation.constraints.Max;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -56,7 +57,12 @@ public class UserInfoController {
     List<UserInfoResponse> userInfoResponseList = new ArrayList<>();
     @GET
     @Path("/getUserInfo/{usersAge}")
-    public Response saveUserInfo(@PathParam("userAge") int usersAge) {
+    public Response saveUserInfo(@PathParam("usersAge") int usersAge) {
+//        UserInfoResponse userInfoResponse = new UserInfoResponse();
+////        userInfoResponse.getUserAge(usersAge);
+//        List<UserInfoRequest> userInfoResponseList = userInfoService.findByUserAge(usersAge);
+//        userInfoResponseList.add(userInfoResponse);
+//        return Response.ok(userInfoResponseList).build();
 
 
 
