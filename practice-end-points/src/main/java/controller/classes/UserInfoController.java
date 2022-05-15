@@ -57,7 +57,7 @@ public class UserInfoController {
     @GET
     @Path("/getUserInfo/{usersAge}")
     public Response saveUserInfo(@PathParam("usersAge") int usersAge) {
-
+        //testing
         UserInfoRequest userInfoRequest = userInfoRequestList.get(usersAge);
         userInfoResponseList.add(userInfoRequest);
         return Response.ok(userInfoResponseList).build();
@@ -70,6 +70,6 @@ public class UserInfoController {
 //        userInfoRequestList.add(userInfoRequest);
         return Response.ok(userInfoService.saveUserInfo()).build();
     }
-
+//starting again
 }
 
