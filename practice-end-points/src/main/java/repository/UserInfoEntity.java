@@ -11,8 +11,8 @@ public class UserInfoEntity extends PanacheEntity {
     @Column(length = 100)
     public String usersName;
 
-    @Column(length = 100)
-    public String usersAge;
+    @Column(name = "users_Age",length = 100)
+    public int usersAge;
 
     public String usersSummary;
 
