@@ -34,6 +34,7 @@ public class MovieResource {
 
     }
 
+    //this one works
     @GET
     @Path("/country/{country}")
     public Response getByCountry(@PathParam("country") String country) {

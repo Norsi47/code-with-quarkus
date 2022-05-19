@@ -1,5 +1,6 @@
 package repository;
 
+import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -16,6 +17,9 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserInfoController {
+
+    @Inject
+    UserInfoPanache userInfoPanache;
 
     @POST
     @Path("/createUsers")
@@ -35,12 +39,22 @@ public class UserInfoController {
         List<UserInfoEntity> userInfoEntityList = UserInfoEntity.listAll();
         return Response.ok(userInfoEntityList).build();
     }
-    //to get by usersName
+    //works now
     @GET
     @Path("/getByUsersName/{usersName}")
     public Response getByUsersName(@PathParam("usersName") String usersName) {
-        List<UserInfoEntity> userInfoEntityList = UserInfoEntity.list("SELECT u FROM" +
-                "UserInfoEntity u WHERE u.usersName = ?1 ORDER BY DESC" , usersName);
+        //spacing of sql matters, works now
+        List<UserInfoEntity> userInfoEntityList = UserInfoEntity.list("SELECT u FROM " +
+                "UserInfoEntity u WHERE u.usersName = ?1 ORDER BY id " +
+                "DESC" , usersName);
+        return Response.ok(userInfoEntityList).build();
+    }
+
+    //does not work, not too sure why
+    @GET
+    @Path("/userName/{usersName}")
+    public Response findByUsersName(@PathParam("usersName") String userName) {
+        List<UserInfoRepo> userInfoEntityList = userInfoPanache.findByUsersName(userName);
         return Response.ok(userInfoEntityList).build();
     }
 
