@@ -50,6 +50,17 @@ public class UserInfoController {
         return Response.ok(userInfoEntityList).build();
     }
 
+    @GET
+    @Path("/tesUserInfo/{testUser}")
+    public Response testUser(@PathParam("testUser") String testUsersName) {
+        return UserInfoEntity.find("usersName", testUsersName)
+                .singleResultOptional()
+                .map(testingUser -> Response.ok(testingUser).build())
+                .orElse(Response.status(Response.Status.NOT_FOUND).build());
+
+    }
+//add response class to show response in insomnia
+
     //does not work, not too sure why
     @GET
     @Path("/userName/{usersName}")
