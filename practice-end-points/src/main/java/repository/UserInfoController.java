@@ -78,5 +78,6 @@ public class UserInfoController {
                 .orElse(Response.status(Response.Status.NOT_FOUND).build());
 
     }
+    //random stuff
 
 }
