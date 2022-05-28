@@ -71,6 +71,6 @@ public class UserInfoController {
         return Response.ok(userInfoService.saveUserInfo()).build();
     }
 //starting again
-    //for streak *2
+    //for streak *2, adding more streaks
 }
 
