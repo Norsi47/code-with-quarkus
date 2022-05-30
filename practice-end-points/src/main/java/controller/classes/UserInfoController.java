@@ -72,5 +72,6 @@ public class UserInfoController {
     }
 //starting again
     //for streak *2, adding more streaks
+    //more streaks
 }
 
