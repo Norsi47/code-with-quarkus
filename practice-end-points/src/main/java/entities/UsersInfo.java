@@ -1,12 +1,14 @@
 package entities;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users_info", schema = "public", catalog = "testUsersInfo")
 @Data
+@Slf4j
 public class UsersInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
