@@ -3,6 +3,7 @@ package entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users_address", schema = "public", catalog = "testUsersInfo")
@@ -24,6 +25,13 @@ public class UsersAddress {
     @Id
     @Column(name = "address_id", nullable = false)
     private int addressId;
+
+
+    //this is to add connect each primary key on the two tables
+//    @JoinColumn(name = "address_id", referencedColumnName = "address_id", insertable = false, updatable = false)
+//    @OneToMany(fetch = FetchType.EAGER)
+//    private List<UsersInfo> usersInfos;
+    //getting red error? maybe needs to be foreign key
 
     @Override
     public boolean equals(Object o) {

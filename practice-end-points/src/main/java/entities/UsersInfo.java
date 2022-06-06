@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users_info", schema = "public", catalog = "testUsersInfo")
@@ -23,6 +24,11 @@ public class UsersInfo {
     @Basic
     @Column(name = "users_age", nullable = false, length = 100)
     private String usersAge;
+
+    //maybe use when foreign key is added?
+//    @JoinColumn(name = "users_age", referencedColumnName = "users_age", insertable = false, updatable = false)
+//    @OneToMany(fetch = FetchType.EAGER)
+//    private List<UsersAddress> usersAddresses;
 
     @Override
     public boolean equals(Object o) {
