@@ -24,9 +24,12 @@ public class UsersInfo {
     @Basic
     @Column(name = "users_age", nullable = false, length = 100)
     private String usersAge;
+    @Basic
+    @Column(name = "users_addy_id", nullable = true)
+    private Integer usersAddyId;
 
-    //maybe use when foreign key is added?
-//    @JoinColumn(name = "users_age", referencedColumnName = "users_age", insertable = false, updatable = false)
+////    maybe use when foreign key is added?
+//    @JoinColumn(name = "users_addy_id", referencedColumnName = "users_addy_id", insertable = false, updatable = false)
 //    @OneToMany(fetch = FetchType.EAGER)
 //    private List<UsersAddress> usersAddresses;
 
@@ -53,4 +56,5 @@ public class UsersInfo {
         result = 31 * result + (usersAge != null ? usersAge.hashCode() : 0);
         return result;
     }
+
 }
