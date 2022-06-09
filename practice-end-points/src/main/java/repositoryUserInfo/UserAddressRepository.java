@@ -1,4 +1,4 @@
-package put.response;
+package repositoryUserInfo;
 
 import entities.UsersAddress;
 import lombok.AllArgsConstructor;
