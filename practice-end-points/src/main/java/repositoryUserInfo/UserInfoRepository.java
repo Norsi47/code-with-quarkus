@@ -1,6 +1,6 @@
 package repositoryUserInfo;
 
-import entities.UsersInfo;
+import entities.UsersInfoEnity;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,14 +17,14 @@ import javax.transaction.Transactional;
 @Slf4j
 @ActivateRequestContext
 @AllArgsConstructor
-public class UserInfoRepository implements PanacheRepository<UsersInfo> {
+public class UserInfoRepository implements PanacheRepository<UsersInfoEnity> {
 
     @Inject
     EntityManager entityManager;
 
-    public UsersInfo save(UsersInfo usersInfo) {
+    public UsersInfoEnity save(UsersInfoEnity usersInfoEnity) {
         try {
-            return entityManager.merge(usersInfo);
+            return entityManager.merge(usersInfoEnity);
         } catch (Exception exception) {
             log.error("Unable to save");
         }

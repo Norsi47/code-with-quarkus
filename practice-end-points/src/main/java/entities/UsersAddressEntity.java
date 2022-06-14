@@ -3,12 +3,11 @@ package entities;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "users_address", schema = "public", catalog = "testUsersInfo")
 @Data
-public class UsersAddress {
+public class UsersAddressEntity {
     @Basic
     @Column(name = "street_user", nullable = true, length = 100)
     private String streetUser;
@@ -38,7 +37,7 @@ public class UsersAddress {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UsersAddress that = (UsersAddress) o;
+        UsersAddressEntity that = (UsersAddressEntity) o;
 
         if (addressId != that.addressId) return false;
         if (streetUser != null ? !streetUser.equals(that.streetUser) : that.streetUser != null) return false;

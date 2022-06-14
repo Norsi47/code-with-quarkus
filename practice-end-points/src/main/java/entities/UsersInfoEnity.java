@@ -4,13 +4,12 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "users_info", schema = "public", catalog = "testUsersInfo")
 @Data
 @Slf4j
-public class UsersInfo {
+public class UsersInfoEnity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "users_id", nullable = false)
@@ -38,12 +37,12 @@ public class UsersInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UsersInfo usersInfo = (UsersInfo) o;
+        UsersInfoEnity usersInfoEnity = (UsersInfoEnity) o;
 
-        if (usersId != usersInfo.usersId) return false;
-        if (firstName != null ? !firstName.equals(usersInfo.firstName) : usersInfo.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(usersInfo.lastName) : usersInfo.lastName != null) return false;
-        if (usersAge != null ? !usersAge.equals(usersInfo.usersAge) : usersInfo.usersAge != null) return false;
+        if (usersId != usersInfoEnity.usersId) return false;
+        if (firstName != null ? !firstName.equals(usersInfoEnity.firstName) : usersInfoEnity.firstName != null) return false;
+        if (lastName != null ? !lastName.equals(usersInfoEnity.lastName) : usersInfoEnity.lastName != null) return false;
+        if (usersAge != null ? !usersAge.equals(usersInfoEnity.usersAge) : usersInfoEnity.usersAge != null) return false;
 
         return true;
     }

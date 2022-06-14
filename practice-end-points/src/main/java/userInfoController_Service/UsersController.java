@@ -18,7 +18,9 @@ public class UsersController {
     @Path("/saveUsersInfo")
     public Response saveUsersInfo(UsersRequest usersRequest) {
 
-return Response.ok().build();
+        UsersService usersService = new UsersService();
+
+        return Response.ok(usersService.createUsersInfo(usersRequest)).build();
     }
 
 

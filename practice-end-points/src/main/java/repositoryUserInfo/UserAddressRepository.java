@@ -1,6 +1,6 @@
 package repositoryUserInfo;
 
-import entities.UsersAddress;
+import entities.UsersAddressEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,9 +20,9 @@ public class UserAddressRepository {
     @Inject
     EntityManager entityManager;
 
-    public UsersAddress save (UsersAddress usersAddress) {
+    public UsersAddressEntity save (UsersAddressEntity usersAddressEntity) {
         try {
-            return entityManager.merge(usersAddress);
+            return entityManager.merge(usersAddressEntity);
         }
         catch (Exception e) {
             log.error("Unable to save");

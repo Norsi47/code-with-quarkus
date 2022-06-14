@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class UsersResponse {
 
+    //turn to list to match UsersNames Class
+
     //we want it to match request
     private String firstName;
     private String lastName;
