@@ -30,6 +30,7 @@ public class UsersService {
         usersResponse.setLastName(usersRequest.getLastName());
         usersResponse.setUsersAge(usersRequest.getUsersAge());
         usersResponse.setStreetUser(usersRequest.getStreetUser());
+        usersResponse.setState(usersRequest.getState());
         usersResponse.setCity(usersRequest.getCity());
 
         //not too sure why not working
@@ -53,7 +54,7 @@ public class UsersService {
         usersInfoEnity.setFirstName(usersRequest.getFirstName());
         usersInfoEnity.setLastName(usersRequest.getLastName());
 
-        usersInfoEnity = userInfoRepository.save(usersInfoEnity);
+         userInfoRepository.save(usersInfoEnity);
 
         return true;
     }
