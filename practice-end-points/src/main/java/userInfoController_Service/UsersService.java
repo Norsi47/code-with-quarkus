@@ -50,7 +50,7 @@ public class UsersService {
 
 //        usersInfoEnity.setFirstName(usersRequest.getFirstName)
 //                .set;
-
+//not saving
         usersInfoEnity.setFirstName(usersRequest.getFirstName());
         usersInfoEnity.setLastName(usersRequest.getLastName());
 
